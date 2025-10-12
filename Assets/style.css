@@ -95,9 +95,8 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 999;
     background-color: rgba(0, 0, 0, 0.589);
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.568)  ;
 }
 
 .nav-bar {
@@ -105,7 +104,6 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    
 }
 
 .nav-links {
@@ -132,10 +130,9 @@ a {
 }
 
 .blur-div {
-    filter: blur(8px);
+    backdrop-filter: blur(8px);
     position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(17, 17, 17, 0.51);
 }
 
 /* Iconos */
@@ -254,7 +251,8 @@ main{
 /* Header */
 
 header h2{
-    margin: 0;
+    margin: 0px;
+    margin-bottom: 15px;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
@@ -264,14 +262,17 @@ header h2{
 /* CARDS */
 
 .container-cards{
-    margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: nowrap;
+    width: 100%;
     height: 250px;
     overflow-x: scroll;
     overflow-y: hidden;
     gap: 10px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
 }
 
 .card-image {
@@ -279,17 +280,27 @@ header h2{
   background-image: url("Images/Gorras/silver_maple.png");
   background-position: center;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-width: 400px;
+}
+
+.card-image--2{
+    background-image: url("Images/Gorras/maple_crown.png");    
+}
+
+.card-image--3{
+    background-image: url("Images/Gorras/Adventure_peak.png");    
 }
 
 /* Efectos Card */
 
 .container__item-card {
   position: relative;
-  width: 400px;
-  height: 240px;
+  width: 80vw;
+  max-width: 400px;
+  height: 250px;
   background-color: #f2f2f2;
   border-radius: 10px;
   display: flex;
@@ -300,8 +311,6 @@ header h2{
   box-shadow: 0 0 0 5px #ffffff80;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-
 
 .container__item-card:hover {
   transform: scale(0.95);
@@ -342,13 +351,200 @@ header h2{
 
 /* Fin de Efectos Card */
 
+/* Efectos Boton de comprar */
+
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.button {
+  --width: 90px;
+  --height: 30px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #222;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: #555;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #555;
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button:hover {
+  background: #222;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
 
 
 
+/* Fin boton de comprar */
 
+/* Banner header*/
 
+.banner{
+    margin-top: 50px;
+}
+.banner p, .banner h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+}
 
+.banner h2{
+    font-size: 34px;
+}
 
+/* Banner Imagenes */
+.container-banner{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.container-banner__content{
+    background-image: url("Images/Gorras/amine-mouzaoui-ufFiDjUSHE8-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+    color: white;
+    padding-left: 25px;
+    padding-bottom: 45px;
+}
+
+.container-banner__content:last-child{
+    background-image: url("Images/Character/Modelo\ con\ gorra.png");
+}
+
+.banner__title{
+    font-size: 22px !important;
+    font-weight: 500 !important;
+}
+
+.banner__btn{
+    background-color: white;
+    border: none;
+    padding: 8px 25px;
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 500;
+    border-radius: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+.banner__btn:hover{
+    background-color: #222;
+    color: white;
+    letter-spacing: 1.2px;
+}
+
+.container-banner__content p:first-child{
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.container-banner__content p:last-child{
+    font-size: 25px;
+    font-weight: 500;
+}
 
 footer{
     margin-top: 200px;

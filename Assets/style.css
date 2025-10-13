@@ -62,6 +62,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* Mobile */
 
 body{
@@ -466,10 +470,24 @@ header h2{
   bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
 }
 
-
-
 /* Fin boton de comprar */
 
+/* Catalogo */
+
+.catalogo{
+    margin-top: 50px;
+}
+
+.catalogo header h2{
+    text-align: left;
+}
+
+.grid-catalogo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;  
+}
 /* Banner header*/
 
 .banner{

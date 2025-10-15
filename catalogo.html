@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+            font-size: 3rem;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        h1 {
+            animation: bounce 1s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body>
-    <h1 style="text-align: center; color: #333; font-family: Arial, sans-serif; margin-top: 50px;">En desarrollo con estilo</h1>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0;">
+        <h1 style="text-align: center; color: #333; font-family: Arial, sans-serif;">En Desarrollo</h1>
+    </div>
 </body>
 </html>

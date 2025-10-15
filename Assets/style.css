@@ -94,7 +94,7 @@ body{
 
 /* Background Image */
 .hero {
-    background-image: url("Images/Background.webp");
+    background-image: url("Images/Background-hero.jpg");
     background-size: cover;
     background-position: left;
     height: 100vh;

@@ -1,41 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Caps Man</title>
-    <link rel="stylesheet" href="Assets/style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>The Caps Man — Gorras y accesorios</title>
+        <meta name="description" content="The Caps Man: gorras de alta calidad con estilo y comodidad. Compra online en Colombia — envíos locales, pago por transferencia y contra entrega.">
+        <meta name="keywords" content="gorras, caps, gorras colombia, gorras hombre, gorras mujer, The Caps Man">
+        <meta name="author" content="The Caps Man">
+        <meta name="robots" content="index, follow">
+
+        <!-- Canonical -->
+        <link rel="canonical" href="https://yourdomain.com/">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="Assets/Images/Icons/favicon-logo.svg">
+
+        <!-- Preconnect & preload for performance -->
+        <link rel="preconnect" href="https://cdn-uicons.flaticon.com" crossorigin>
+        <link rel="preload" as="image" href="Assets/Images/Modelo-hero/Modelo-medium.webp" importance="high">
+
+        <!-- Stylesheets (load local first) -->
+        <link rel="stylesheet" href="Assets/style.css">
+        <link rel="preload" href="Assets/style.css" as="style">
+
+        <!-- External icon fonts with integrity/rel attributes -->
+        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css" crossorigin="anonymous">
+
+        <!-- Open Graph / Twitter Card -->
+        <meta property="og:site_name" content="The Caps Man">
+        <meta property="og:title" content="The Caps Man — Gorras y accesorios">
+        <meta property="og:description" content="Gorras de alta calidad con estilo y comodidad. Compra online en Colombia.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://yourdomain.com/">
+        <meta property="og:image" content="https://yourdomain.com/Assets/Images/Modelo-hero/Modelo-medium.webp">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@thecapsman">
+        <meta name="twitter:title" content="The Caps Man — Gorras y accesorios">
+        <meta name="twitter:description" content="Gorras de alta calidad con estilo y comodidad. Compra online en Colombia.">
+        <meta name="twitter:image" content="https://yourdomain.com/Assets/Images/Modelo-hero/Modelo-medium.webp">
+
+        <!-- Structured Data (JSON-LD) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "The Caps Man",
+            "url": "https://yourdomain.com/",
+            "logo": "https://yourdomain.com/Assets/Images/Icons/logo.svg",
+            "description": "Gorras de alta calidad con estilo y comodidad.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Calle Fake 123",
+                "addressLocality": "Ciudad",
+                "addressCountry": "CO"
+            },
+            "contactPoint": [{
+                "@type": "ContactPoint",
+                "telephone": "+57 305 840 5014",
+                "contactType": "customer service"
+            }]
+        }
+        </script>
+
 </head>
 <body>
+    <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:auto;">Saltar al contenido</a>
     <!-- Hero Section -->
     <div class="hero">
         <!-- nav Section -->
         <div class="container-nav">
-            <nav class="nav-bar">
-                <a href="#"><img src="Assets/Images/Icons/logo.svg" alt="Logo de The Caps Man" class="logo"></a>
+            <nav class="nav-bar" role="navigation" aria-label="Menú principal">
+                <a href="/" aria-label="Inicio"><img src="Assets/Images/Icons/logo.svg" alt="Logo de The Caps Man" class="logo"></a>
                 <ul class="nav-links">
-                    <li><a href="#">Nuevos Estilos</a></li>
-                    <li><a href="#">Catalogo</a></li>
-                    <li><a href="#f">Contacto</a></li>
+                    <li><a href="#nuevos-estilos">Nuevos Estilos</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#footer">Contacto</a></li>
                 </ul>
-                <div class="container-icons">
-                    <i class="nav-icon fi fi-rr-search"></i>
-                    <i class="nav-icon fi fi-rr-shopping-cart"></i>
-                    <i class="nav-icon fi fi-rr-menu-burger"></i>
+                <div class="container-icons" aria-hidden="true">
+                    <i class="nav-icon fi fi-rr-search" aria-hidden="true"></i>
+                    <i class="nav-icon fi fi-rr-shopping-cart" aria-hidden="true"></i>
+                    <i class="nav-icon fi fi-rr-menu-burger" aria-hidden="true"></i>
                 </div>
             </nav>
-            <div class="blur-div"></div>
+            <div class="blur-div" aria-hidden="true"></div>
         </div>
         <!-- Hero Content -->
-        <img src="Assets/Images/Modelo-hero/Modelo-medium.webp" 
-            srcset="Assets/Images/Character/Modelo-small.webp 480w,
-                  Assets/Images/Character/Modelo-medium.webp 800w,
-                  Assets/Images/Character/Modelo-large.webp 1200w"
-                  sizes="(max-width: 600px) 100vw, 640px"
-            alt="Modelo de ropa con transparencia (WebP)" class="hero-model" id="hero-model">
+        <picture>
+            <source type="image/webp" srcset="Assets/Images/Character/Modelo-small.webp 400w,
+                            Assets/Images/Character/Modelo-medium.webp 600w,
+                            Assets/Images/Character/Modelo-large.webp 1200w" sizes="(max-width: 600px) 100vw, 600px">
+        
+            <source type="image/png" srcset="Assets/Images/Character/Modelo-small.png 400w,
+                            Assets/Images/Character/Modelo-medium.png 600w,
+                            Assets/Images/Character/Modelo-large.png 1200w" sizes="(max-width: 600px) 100vw, 600px">
+        
+            <img src="Assets/Images/Character/Modelo-medium.png" alt="Modelo luciendo gorra de The Caps Man" class="hero-model"
+                id="hero-model" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
         <h1>THE <br> Caps Man</h1>
     </div>
     <a href="https://wa.me/573058405014?text=Hola%2C%20vengo%20de%20la%20pagina%20The%20Caps%20Man%2C%20me%20interesaria%20mas%20informacion"
@@ -50,7 +114,7 @@
         <br>
     </div>
     <!-- Main -->
-    <main>
+    <main id="main">
         <header id="nuevos-estilos">
             <h2>Nuevos estilos</h2>
         </header>
@@ -117,7 +181,7 @@
             </div>
         </section>
         <!-- Catalogo -->
-         <section class="catalogo">
+         <section class="catalogo" id="catalogo">
             <header class="catalogo__header">
                 <h2>Catalogo</h2>
                 <a href="catalogo.html"><button>Ver mas</button></a>
@@ -196,7 +260,7 @@
                     </div>
                 </div>
             </div>
-         </section>
+    </section>
         <!-- Banner -->
         <section class="banner">
             <p>Renueva tu look</p>
@@ -212,7 +276,7 @@
                 </div>
             </div>
          </section>
-        </main>
+    </main>
         <footer id="footer">
            <div class="summary-section">
                 <!-- Summary section -->
@@ -223,7 +287,7 @@
                     <p>Nuestra misión es proporcionar a nuestros clientes productos que no solo complementen su estilo personal, sino que también ofrezcan una experiencia de uso excepcional.</p>
                 </details>
                 <details class="qtn__container">
-                    <summary>Cuales son los metodos de pago?</summary>
+                    <summary>¿Cuáles son los métodos de pago?</summary>
                     <p>Hasta el momento solo manejamos los siguientes metodos de pago:</p>
                     <ul>
                         <li>Transferencias bancarias</li>
@@ -231,14 +295,14 @@
                     </ul>
                 </details>
                 <details class="qtn__container">
-                    <summary>Hacen envios a todo el pais?</summary>
-                    <p>No, por el momento solo realizamos envios dentro de la ciudad.</p>
+                    <summary>¿Hacen envíos a todo el país?</summary>
+                    <p>No, por el momento solo realizamos envíos dentro de la ciudad.</p>
                 </details>
                 <details class="qtn__container">
-                    <summary>Tienen tienda fisica?</summary>
+                    <summary>¿Tienen tienda física?</summary>
                     <p>No, por el momento solo manejamos ventas online.</p>
                 </details>
-                <h2>Contactanos</h2>
+             <h2>Contáctanos</h2>
                 <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos. Estamos aquí para ayudarte.</p>
                 <p>Email: thecapsman@gmail.com</p>
                 <p>Teléfono: +57 305 840 5014</p>

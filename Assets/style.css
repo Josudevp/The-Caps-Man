@@ -94,7 +94,7 @@ body{
 
 /* Background Image */
 .hero {
-    background-image: url("Images/Background-hero.jpg");
+    background-image: url("Images/Background.webp");
     background-size: cover;
     background-position: left;
     height: 100vh;
@@ -110,8 +110,8 @@ body{
 /* Navigation */
 
 .container-nav {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     position: fixed;
     top: 0;
     left: 0;
@@ -128,13 +128,6 @@ body{
 }
 
 .nav-links {
-    /* display: flex;
-    gap: 5rem;
-    justify-content: center;
-    z-index: 12;
-    position: relative;
-    font-weight: 500;
-    list-style: none; */
     display: none;
 }
 
@@ -525,8 +518,10 @@ header h2{
 
 .grid-catalogo{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 300px));
+  justify-content: center;
+  justify-items: center;
+  gap: 15px;
   margin-top: 20px;  
 }
 
@@ -534,11 +529,13 @@ header h2{
 	border-radius: 5px 8px 0px 0px;
 }
 .catalogo__item{
-	background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
 	padding: 5px;
 	padding-bottom: 15px;
 	border-radius: 8px 8px 0px 0px;
-	box-shadow: 0px 0px 15px #0000003f;
 	transition: all .3s ease-out;
 }
 
@@ -639,6 +636,7 @@ footer{
     background-color: #222;
     color: white;
     margin-top: 50px;
+    font-size: 1.4em;
 }
 
 footer h2{
@@ -681,4 +679,117 @@ details[open] summary::before {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
+}
+
+/* Media Queries */
+
+/* Tablets - Landscape */
+
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        z-index: 12;
+        font-weight: 500;
+        list-style: none;
+    }
+    .nav-icon:last-child{
+        display: none;
+    }
+    .catalogo__header h2{
+        font-size: 34px;
+    }
+    .catalogo button{
+        font-size: 18px;
+        padding: 10px 30px;
+    }
+    .nav-links {
+        gap: 2.8rem;
+        font-size: 1.3rem;
+    }
+    .nav-icon, .logo{
+        font-size: 1.8rem;
+        height: 3rem;
+    }
+}
+
+/* Desktop - Medium Screens */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 140px;
+    }
+    .nav-links {
+        gap: 4rem;
+        font-size: 1.5rem;
+    }
+    .nav-icon, .logo{
+        font-size: 2rem;
+        height: 3rem;
+    }
+    .text-wrapper{
+        height: 70px;
+    }
+    .word{
+        font-size: 22px;
+    }
+    .copyright{
+        font-size: 20px;
+    }
+    footer{
+        padding: 30px 240px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container-cards{
+        justify-content: center;
+    }
+    h1 {
+        font-size: 160px;
+    }
+    .text-wrapper{
+        height: 80px;
+    }
+    .word{
+        font-size: 26px;
+    }
+    .catalogo__header h2{
+        font-size: 40px;
+    }
+    .catalogo button{
+        font-size: 20px;
+        padding: 12px 35px;
+    }
+    .container-banner{
+        flex-direction: row;
+        height: 500px;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container-banner__content{
+        width: 49%;
+        height: 100%;
+        padding-left: 40px;
+        padding-bottom: 60px;
+    }
+    .container-banner__content p:first-child{
+        font-size: 18px;
+    }
+    .container-banner__content p:last-child{
+        font-size: 30px;
+    }
+    .banner__title{
+        font-size: 28px !important;
+    }
+    .banner__btn{
+        font-size: 20px;
+        padding: 10px 30px;
+    }
+    .catalogo__header{
+        justify-content: center;
+
+        gap: 820px;
+    }
 }
